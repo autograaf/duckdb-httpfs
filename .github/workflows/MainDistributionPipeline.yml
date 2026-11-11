@@ -24,7 +24,7 @@ jobs:
 
   build:
     name: Build extension
-    uses: autograaf/extension-ci-tools/.github/workflows/build.yml@windows-arm64-openssl-o1
+    uses: duckdb/extension-ci-tools/.github/workflows/build.yml@main
     needs:
       - prepare
     with:
@@ -32,8 +32,6 @@ jobs:
         main:
           config: extension_config.cmake
           toolchain: main
-      ci_tools_repository: autograaf/extension-ci-tools
-      ci_tools_version: windows-arm64-openssl-o1
       opt_in_archs: windows_arm64
       exclude_archs: linux_amd64;linux_arm64;linux_amd64_musl;linux_arm64_musl;osx_amd64;osx_arm64;windows_amd64;windows_amd64_mingw;wasm_mvp;wasm_eh;wasm_threads
       reduced_ci_mode: disabled
